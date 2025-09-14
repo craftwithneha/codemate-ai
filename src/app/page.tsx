@@ -130,13 +130,13 @@ export default function HomePage() {
             <Link href="/sign-in">
               <Button
                 variant="outline"
-                className="rounded-xl border border-emerald-500/30 bg-black/30 text-emerald-300 hover:bg-emerald-500/20 hover:text-white"
+                className="rounded-xl border border-emerald-500/30 bg-black/30 text-emerald-300 hover:bg-emerald-500/20 hover:text-white cursor-pointer"
               >
                 Sign In
               </Button>
             </Link>
             <Link href="/sign-up">
-              <Button className="rounded-xl bg-gradient-to-r from-[rgb(96,252,182)] to-emerald-400 hover:from-emerald-300 hover:to-emerald-500 text-black font-medium shadow-lg">
+              <Button className="rounded-xl bg-gradient-to-r from-[rgb(96,252,182)] to-emerald-400 hover:from-emerald-300 hover:to-emerald-500 text-black font-medium shadow-lg cursor-pointer">
                 Get Started <ArrowRight className="ml-1 w-4 h-4" />
               </Button>
             </Link>
