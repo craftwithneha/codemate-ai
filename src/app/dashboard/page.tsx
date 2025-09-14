@@ -253,7 +253,6 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Send, Copy, Check, Bot, Terminal } from "lucide-react";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import type { ComponentProps } from "react";
 import { motion } from "framer-motion";
