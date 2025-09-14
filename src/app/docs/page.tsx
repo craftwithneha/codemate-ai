@@ -70,10 +70,10 @@ export default function DocsPage() {
       {/* Hero Section */}
       <section className="max-w-5xl mx-auto px-6 pt-32 pb-20 text-center relative z-10">
         <h1 className="text-4xl md:text-6xl font-extrabold bg-gradient-to-r from-[rgb(96,252,182)] via-emerald-300 to-emerald-400 bg-clip-text text-transparent animate-gradient">
-          CodeMate AI Docs
+          NexaCode AI Docs
         </h1>
         <p className="mt-6 text-lg text-zinc-400 max-w-2xl mx-auto">
-          Explore professional guides, API references, and examples to integrate CodeMate AI into your workflow efficiently.
+          Explore professional guides, API references, and examples to integrate NexaCode AI into your workflow efficiently.
         </p>
       </section>
 

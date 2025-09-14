@@ -55,7 +55,7 @@ export default function FeaturesPage() {
           className="text-zinc-400 max-w-2xl mx-auto"
         >
           Everything you need to code smarter, faster, and better.  
-          CodeMate AI adapts to your workflow and supercharges your productivity.
+          NexaCode AI adapts to your workflow and supercharges your productivity.
         </motion.p>
       </div>
 

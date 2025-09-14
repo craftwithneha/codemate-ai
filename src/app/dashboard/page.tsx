@@ -105,7 +105,7 @@ export default function DashboardPage() {
               <Bot size={100} className="text-[#60FCB6]" />
             </div>
             <h2 className="text-xl mt-8 font-bold text-[#60FCB6] animate-pulse">
-              Welcome to CodeMate AI
+              Welcome to NexaCode AI
             </h2>
           </div>
         )}
@@ -230,7 +230,7 @@ export default function DashboardPage() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder="Ask CodeMate something..."
+          placeholder="Ask to NexaCode something..."
         />
         <Button
           type="submit"

@@ -113,7 +113,7 @@ export default function HomePage() {
             href="/"
             className="text-2xl font-extrabold bg-gradient-to-r from-[rgb(96,252,182)] via-emerald-300 to-emerald-400 bg-clip-text text-transparent"
           >
-            CodeMate AI
+            NexaCode
           </Link>
           <div className="hidden md:flex gap-6 text-sm">
             {["Features", "Pricing", "Docs"].map((link, i) => (
@@ -168,7 +168,7 @@ export default function HomePage() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-lg text-zinc-400 max-w-lg mx-auto md:mx-0"
           >
-            CodeMate AI generates snippets, explains errors, and chats about tech like your best coding partner.
+            NexaCode AI generates snippets, explains errors, and chats about tech like your best coding partner.
           </motion.p>
         </motion.div>
 
@@ -319,7 +319,7 @@ export default function HomePage() {
             className="text-4xl font-bold mb-4"
           >
             <span className="bg-gradient-to-r from-[rgb(96,252,182)] via-emerald-300 to-emerald-400 bg-clip-text text-transparent">
-              Why Choose CodeMate AI?
+              Why Choose NexaCode AI?
             </span>
           </motion.h2>
           <motion.p
