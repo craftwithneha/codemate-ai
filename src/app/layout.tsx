@@ -27,7 +27,6 @@
 //   );
 // }
 
-
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -47,7 +46,7 @@ export const metadata = {
   title: "NexaCode",
   description: "Your AI coding assistant powered by Next.js & Appwrite",
   icons: {
-    icon: "/chatbotneon.png",
+    icon: "/favicon.ico",
   },
 };
 

@@ -207,7 +207,7 @@ export default function HomePage() {
             className="text-zinc-400"
           >
             Ask technical questions, debug errors, or discuss tech trends.  
-            CodeMate AI is here to help developers at every step.
+            NexaCode AI is here to help developers at every step.
           </motion.p>
         </div>
 
