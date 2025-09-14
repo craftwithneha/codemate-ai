@@ -35,8 +35,15 @@ const plans = [
 
 export default function PricingPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-zinc-900 to-black text-white py-20 px-6">
-      <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-12 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+    <div className="min-h-screen bg-black text-white py-20 px-6 relative overflow-hidden">
+      {/* Neon Background Orbs */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-10 left-1/4 w-72 h-72 bg-[rgb(96,252,182)] opacity-5 blur-[120px] animate-spin-slow rounded-full" />
+        <div className="absolute bottom-20 right-1/4 w-60 h-60 bg-purple-400 opacity-5 blur-[80px] animate-pulse rounded-full" />
+        <div className="absolute top-1/3 right-1/3 w-80 h-80 bg-pink-400 opacity-3 blur-[150px] rounded-full animate-pulse" />
+      </div>
+
+      <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-12 bg-gradient-to-r from-[rgb(96,252,182)] via-emerald-300 to-emerald-400 bg-clip-text text-transparent animate-gradient">
         Pricing Plans
       </h1>
 
@@ -44,21 +51,23 @@ export default function PricingPage() {
         {plans.map((plan, i) => (
           <div
             key={i}
-            className="bg-zinc-900/60 border border-zinc-800 rounded-2xl p-6 flex flex-col shadow-lg hover:border-purple-500 transition"
+            className="group bg-black/50 backdrop-blur-md border border-white/10 rounded-3xl p-8 flex flex-col shadow-[0_0_40px_rgba(96,252,182,0.1)] hover:shadow-[0_0_60px_rgba(96,252,182,0.3)] hover:border-[rgb(96,252,182)] transition-all"
           >
             <h2 className="text-2xl font-semibold mb-2">{plan.name}</h2>
-            <p className="text-3xl font-bold mb-6 text-purple-400">{plan.price}</p>
+            <p className="text-3xl font-bold mb-6 bg-gradient-to-r from-[rgb(96,252,182)] via-emerald-300 to-emerald-400 bg-clip-text text-transparent">
+              {plan.price}
+            </p>
 
             <ul className="space-y-3 flex-1">
               {plan.features.map((f, idx) => (
-                <li key={idx} className="flex items-start space-x-2 text-zinc-300">
-                  <Check className="text-purple-400 mt-1" size={18} />
+                <li key={idx} className="flex items-start space-x-2 text-zinc-300 group-hover:text-[rgb(96,252,182)] transition-colors">
+                  <Check className="text-[rgb(96,252,182)] mt-1" size={18} />
                   <span>{f}</span>
                 </li>
               ))}
             </ul>
 
-            <Button className="mt-6 w-full bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-lg font-medium cursor-pointer">
+            <Button className="mt-6 w-full bg-gradient-to-r from-[rgb(96,252,182)] to-emerald-400 hover:from-emerald-300 hover:to-emerald-500 text-black py-2 rounded-xl font-medium shadow-lg transition-all">
               Choose {plan.name}
             </Button>
           </div>

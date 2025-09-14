@@ -8,17 +8,22 @@ import {
   HelpCircle,
   LifeBuoy,
 } from 'lucide-react';
+import { ReactElement } from 'react';
+import { motion } from 'framer-motion';
+
+type DocItem = {
+  title: string;
+  desc: string;
+  points: string[];
+  icon: ReactElement;
+};
 
 export default function DocsPage() {
-  const items = [
+  const items: DocItem[] = [
     {
       title: 'Getting Started',
       desc: 'Set up CodeMate AI in your project in minutes.',
-      points: [
-        'Installation guide',
-        'Basic configuration',
-        'Running your first AI command',
-      ],
+      points: ['Installation guide', 'Basic configuration', 'Running your first AI command'],
       icon: <BookOpen className="w-7 h-7 text-purple-400" />,
     },
     {
@@ -54,38 +59,48 @@ export default function DocsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+      {/* Soft Neon Background */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-10 left-1/4 w-72 h-72 bg-[rgb(96,252,182)] opacity-5 blur-[120px] animate-spin-slow rounded-full" />
+        <div className="absolute bottom-20 right-1/4 w-60 h-60 bg-pink-400 opacity-5 blur-[80px] animate-pulse rounded-full" />
+        <div className="absolute top-1/3 right-1/3 w-80 h-80 bg-purple-400 opacity-3 blur-[150px] rounded-full animate-pulse" />
+      </div>
+
       {/* Hero Section */}
-      <section className="max-w-5xl mx-auto px-6 pt-32 pb-20 text-center">
-        <h1 className="text-4xl md:text-6xl font-extrabold bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+      <section className="max-w-5xl mx-auto px-6 pt-32 pb-20 text-center relative z-10">
+        <h1 className="text-4xl md:text-6xl font-extrabold bg-gradient-to-r from-[rgb(96,252,182)] via-emerald-300 to-emerald-400 bg-clip-text text-transparent animate-gradient">
           CodeMate AI Docs
         </h1>
         <p className="mt-6 text-lg text-zinc-400 max-w-2xl mx-auto">
-          Learn how to integrate CodeMate AI into your workflow.  
-          Start building with guides, tutorials, and API references.
+          Explore professional guides, API references, and examples to integrate CodeMate AI into your workflow efficiently.
         </p>
       </section>
 
-      {/* Bigger Docs Cards */}
-      <section className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pb-20">
+      {/* Docs Cards */}
+      <section className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pb-20 relative z-10">
         {items.map((item, i) => (
-          <div
+          <motion.div
             key={i}
-            className="group bg-zinc-900/70 p-8 rounded-2xl hover:bg-zinc-800/90 transition-all cursor-default border border-transparent hover:border-purple-500/50 hover:shadow-2xl min-h-[280px] flex flex-col"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: i * 0.1 }}
+            whileHover={{ scale: 1.03 }}
+            className="group bg-black/50 backdrop-blur-md p-8 rounded-3xl border border-white/10 shadow-[0_0_40px_rgba(96,252,182,0.15)] hover:shadow-[0_0_60px_rgba(96,252,182,0.3)] hover:border-[rgb(96,252,182)] cursor-default flex flex-col min-h-[280px] transition-all"
           >
             <div className="flex items-center gap-4 mb-5">
               {item.icon}
-              <h3 className="text-2xl font-semibold group-hover:text-purple-400">
+              <h3 className="text-2xl font-semibold group-hover:text-[rgb(96,252,182)] transition-colors">
                 {item.title}
               </h3>
             </div>
             <p className="text-zinc-300 text-base">{item.desc}</p>
-            <ul className="mt-5 text-zinc-500 text-sm space-y-2 list-disc list-inside">
+            <ul className="mt-5 text-zinc-400 text-sm space-y-2 list-disc list-inside">
               {item.points.map((point, idx) => (
-                <li key={idx}>{point}</li>
+                <li key={idx} className="hover:text-[rgb(96,252,182)] transition-colors">{point}</li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         ))}
       </section>
     </div>
